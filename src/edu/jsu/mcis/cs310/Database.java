@@ -70,26 +70,6 @@ public class Database {
         return result;
         
     }
-    
-    public int register(int studentid, int termid, int crn) {
-        
-        int result = 0;
-        
-        try {
-            String query = "DELETE FROM registration WHERE studentid = ? AND termid = ? AND crn = ?";
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1, studentid);
-            ps.setInt(2, termid);
-            ps.setInt(3, crn);
-
-            result = ps.executeUpdate();
-        } 
-        catch (Exception e) { e.printStackTrace(); }
-
-        
-        return result;
-        
-    }
 
     public int drop(int studentid, int termid, int crn) {
         
